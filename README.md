@@ -4,6 +4,7 @@
     - [ A post/tweet should have max. 250 characters ]
     - [ Every post/tweet should support image upload ]
 
+- A user cannot update a tweet normally
 - Any post should be visible to the people who follow the author
 - Anyone who follows the author should be able to comment on his post/tweet
 - Anyone who follows the author should be able to like his post/tweet
