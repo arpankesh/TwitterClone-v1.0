@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const commentSchema = new mongoose.Schema({
     content: {
@@ -13,4 +13,5 @@ const commentSchema = new mongoose.Schema({
 })
 
 const Comment = mongoose.model("Comment", commentSchema);
-module.exports = Comment;
+export default Comment;  //Since there's only one export, we can use default
+// could have done :- export Comment too
