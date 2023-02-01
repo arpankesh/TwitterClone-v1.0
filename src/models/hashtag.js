@@ -15,10 +15,10 @@ const hashtagSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 // Implementing Hooks to store all hashtags in lowercase only
-hashtagSchema.pre("save", function (next) {
-    this.title = this.title.toLowerCase();
-    next();
-})
+// hashtagSchema.pre("save", function (next) {
+//     this.title = this.title.toLowerCase();
+//     next();
+// })
 
 const Hashtag = mongoose.model("Hashtag", hashtagSchema);
 export default Hashtag;
