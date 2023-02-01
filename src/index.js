@@ -12,6 +12,6 @@ app.listen(PORT, async () => {
     console.log("MongoDB connected");
     let ser = new service();
     await ser.create({
-        content: "Done with #Refactoring2 !!"
+        content: "My #CoDe works !!!"
     });
 })
