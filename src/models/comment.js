@@ -5,9 +5,21 @@ const commentSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    userEmail: {
-        type: String
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+        required: true,
     },
+    onModel: {
+        type: String,
+        required: true,
+        enum: ["Tweet", "Commment"]
+    },
+    commentable: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        refPath: "onModel"
+    }
 }, {
     timestamps: true
 })
