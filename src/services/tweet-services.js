@@ -6,6 +6,11 @@ class TweetService {
         this.hashtagRepository = new HashtagRepository();
     }
 
+    //If we try to create a tweet having a new (not already in DB) hashtag more than once inside it like :-
+    // "loving it #so #so #much",  the tweet and the 1st hashtag of "so" will be created
+    // But, on encountering the second hashtag, an error gets thrown because title of a hashtag should be unique
+    // That's why the hashtag "much" will not be created because the bulkCreate function call throws an error after the 2nd "so"
+    // This can be solved by using the data structure "set" to store only unique set of tags
     async create(data) {
         const content = data.content;
         let tags = content.match(/#[a-zA-Z0-9_]+/g); //this line extracts the hashtags
